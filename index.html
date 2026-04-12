@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跟過去的我說謝謝 | 療癒引導旅程</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-overlay: rgba(253, 251, 247, 0.85);
+            --accent-color: #8d775f;
+            --text-color: #3d3d3d;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #1a1a1a; /* 底色 */
+        }
+
+        /* 全域背景層 */
+        .bg-layer {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 2s ease-in-out, transform 3s ease-in-out;
+            opacity: 0;
+            transform: scale(1.1);
+        }
+
+        .bg-layer.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* 暖色濾鏡層 */
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(253, 251, 247, 0.6) 0%, rgba(245, 236, 224, 0.8) 100%);
+            backdrop-filter: blur(2px);
+        }
+
+        .serif {
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step-content {
+            display: none;
+        }
+
+        .step-content.active {
+            display: block;
+        }
+
+        /* 磨砂玻璃卡片 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            letter-spacing: 0.15em;
+        }
+
+        .btn-primary:hover {
+            background-color: #6d5b49;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(141, 119, 95, 0.3);
+        }
+
+        /* 呼吸動畫 */
+        .breath-ring {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+        }
+
+        .ring {
+            position: absolute;
+            inset: 0;
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: pulse 8s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.1; }
+            50% { transform: scale(1.4); opacity: 0.4; }
+        }
+
+        /* 紙張紋理 */
+        .texture {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+        }
+    </style>
+</head>
+<body>
+
+    <div class="texture"></div>
+
+    <!-- 各階段背景圖片 -->
+    <!-- 第一幕：香氛蠟燭背景 -->
+    <div id="bg-1" class="bg-layer active" style="background-image: url('https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?q=80&w=1920');"></div>
+    <!-- 第二幕：冷冽異鄉背景 -->
+    <div id="bg-2" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=1920');"></div>
+    <!-- 第三幕：夕陽餘暉回鄉背景 -->
+    <div id="bg-3" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1920');"></div>
+    <!-- 第四幕：內省湖泊背景 -->
+    <div id="bg-4" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1920');"></div>
+    <!-- 第五幕：書寫空間背景 -->
+    <div id="bg-5" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1920');"></div>
+    <!-- 第六幕：和解祝福背景 -->
+    <div id="bg-6" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1920');"></div>
+
+    <div class="bg-overlay"></div>
+
+    <div id="app" class="relative z-10 max-w-2xl mx-auto px-6 py-12 min-h-screen flex flex-col justify-center">
+        
+        <!-- Step 1: Landing -->
+        <div id="step-1" class="step-content active text-center fade-in">
+            <h1 class="text-4xl md:text-5xl serif mb-6 tracking-[0.3em] text-stone-800">跟過去的我說謝謝</h1>
+            <p class="text-stone-500 tracking-[0.5em] text-xs mb-16 uppercase">A Journey to the Heart</p>
+            
+            <div class="breath-ring mb-16">
+                <div class="ring"></div>
+                <div class="ring" style="animation-delay: -2s;"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-stone-600">
+                    <span class="text-[10px] tracking-[0.4em] mb-1">跟隨呼吸</span>
+                    <span class="serif italic text-xl">靜心</span>
+                </div>
+            </div>
+
+            <p class="text-lg text-stone-600 mb-12 leading-relaxed max-w-sm mx-auto">
+                此刻，不論你在哪裡，<br>
+                讓我們先暫停下來，<br>
+                點亮心底的一盞光，<br>
+                與那個在回憶裡等候的自己，見一面。
+            </p>
+            
+            <button onclick="nextStep(2)" class="btn-primary px-14 py-4 rounded-full text-lg shadow-2xl font-light">
+                開啟對話
+            </button>
+        </div>
+
+        <!-- Step 2: Story Part 1 -->
+        <div id="step-2" class="step-content">
+            <div class="mb-4 text-stone-400 text-[10px] tracking-[0.3em] uppercase">Chapter 01 / 啟程</div>
+            <h2 class="text-2xl md:text-3xl serif mb-10 text-stone-800 leading-snug">
+                曾經的我，<br>
+                以為挑戰遠方才是成長。
+            </h2>
+            
+            <div class="glass-card p-8 md:p-12 rounded-[2rem] mb-10 leading-relaxed text-stone-700">
+                <p class="mb-6">幾年前，我拖著沈重的行李箱，決定遠赴他鄉工作。那時的我，滿腦子都想著要嘗試挑戰，想要用力跳出原本的舒適圈，讓自己能夠快速成長，去看看外面的世界到底有多大。</p>
+                <p class="mb-6">但現實的寂寞比想像中還要銳利。在異鄉的小房間裡，我看著窗外陌生的路燈，看著手機裡家人團聚的照片。那一刻，我好後悔。</p>
+                
+                <div class="my-10 p-6 border-l-2 border-stone-400 bg-white/30 italic text-stone-600">
+                    「為什麼我要親手推開那些溫暖？<br>為什麼我要讓自己處於這種孤單裡？」
+                </div>
+                
+                <p>那段日子，我不斷在心裡責罵那個「做決定的我」。我覺得他好笨、好殘忍、好自私。</p>
+            </div>
+            
+            <div class="text-center">
+                <button onclick="nextStep(3)" class="btn-primary px-10 py-3 rounded-full text-sm">
+                    那後來呢？
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 3: Story Part 2 -->
+        <div id="step-3" class="step-content">
+            <div class="mb-4 text-stone-400 text-[10px] tracking-[0.3em] uppercase">Chapter 02 / 歸途</div>
+            <h2 class="text-2xl md:text-3xl serif mb-10 text-stone-800 leading-snug">
+                回到家後，<br>
+                我終於看見了「他」。
+            </h2>
+            
+            <div class="glass-card p-8 md:p-12 rounded-[2rem] mb-10 leading-relaxed text-stone-700">
+                <p class="mb-6">回到家很久之後的某個下午，我看著夕陽照進客廳，突然感到一陣心疼。那不是對選擇的遺憾，而是對那個自己的心疼。</p>
+                <p class="mb-6">我終於看見了，那個孤身在外、獨自承受壓力的自己。他在異鄉冷冽的夜裡，其實也只是在為了「更好的明天」而努力著。他雖然害怕，但他還是勇敢地踏出去了。</p>
+                
+                <p class="font-bold text-stone-900 mb-4 text-xl serif">「對不起，我曾那樣責備你。」</p>
+                <p>我終於明白，他當初選擇離開，是因為他想要自我突破、想給未來的自己更多可能。他的出發點，全是因為對生命的熱忱。他不應該被我這樣唾棄，他應該被我好好抱一抱。</p>
+            </div>
+            
+            <div class="text-center">
+                <button onclick="nextStep(4)" class="btn-primary px-10 py-3 rounded-full text-sm">
+                    走入內心
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 4: Reflection -->
+        <div id="step-4" class="step-content text-center">
+            <h2 class="text-3xl serif mb-4 text-stone-800">換你說說話</h2>
+            <p class="text-stone-500 mb-12">在記憶的長廊裡，是否也有一個被你冷落的自己？</p>
+            
+            <div class="grid gap-6 mb-12">
+                <div class="p-8 glass-card rounded-2xl text-left border-white/40">
+                    <p class="text-stone-800 font-medium mb-2">Q1. 哪一個決定，曾讓你深感後悔？</p>
+                    <p class="text-stone-500 text-sm">試著回想起那時的場景...</p>
+                </div>
+                <div class="p-8 glass-card rounded-2xl text-left border-white/40">
+                    <p class="text-stone-800 font-medium mb-2">Q2. 當時的他，是為了追求什麼樣的突破？</p>
+                    <p class="text-stone-500 text-sm">看見他眼裡的希望與不安...</p>
+                </div>
+                <div class="p-8 glass-card rounded-2xl text-left border-white/40">
+                    <p class="text-stone-800 font-medium mb-2">Q3. 你願不願意對他說聲「辛苦了」？</p>
+                    <p class="text-stone-500 text-sm">把那份遲到的謝謝送給他...</p>
+                </div>
+            </div>
+            
+            <button onclick="nextStep(5)" class="btn-primary px-12 py-4 rounded-full shadow-lg">
+                寫下這份體諒
+            </button>
+        </div>
+
+        <!-- Step 5: QR Code -->
+        <div id="step-5" class="step-content text-center">
+            <h2 class="text-2xl serif mb-6 text-stone-800">把想說的話，寫成信</h2>
+            <p class="text-stone-500 mb-12 leading-relaxed">
+                掃描下方 QR Code，進入專屬書寫空間。<br>
+                將那份溫暖，親手遞給過去的自己。
+            </p>
+            
+            <div class="relative inline-block p-4 bg-white/40 rounded-[2.5rem] shadow-2xl backdrop-blur-md border border-white/50">
+                <img src="qrcode-generator.png" alt="寫信 QR Code" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-lg" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=example';">
+                <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-stone-800 text-white px-8 py-2 rounded-full text-xs tracking-widest shadow-xl">
+                    SCAN TO START
+                </div>
+            </div>
+            
+            <div class="mt-24">
+                <button onclick="nextStep(6)" class="text-stone-400 underline underline-offset-8 text-sm hover:text-stone-600 transition-colors">
+                    完成後，領受最後的祝福
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 6: Conclusion -->
+        <div id="step-6" class="step-content text-center py-10">
+            <div class="mb-12 text-4xl">🌿</div>
+            
+            <h2 class="text-3xl serif mb-10 text-stone-800 tracking-widest leading-relaxed">
+                所有的遺憾，<br>終將成為最溫柔的養分。
+            </h2>
+            
+            <div class="max-w-md mx-auto space-y-8 text-stone-600 leading-relaxed mb-16 text-lg">
+                <p>謝謝你參與這場重逢。</p>
+                <p>當你學會對過去的自己溫柔，<br>你便擁有了擁抱未來的力量。</p>
+                <p class="serif italic text-stone-900 text-2xl mt-12">「謝謝你，那個曾經勇敢的自己。」</p>
+            </div>
+            
+            <button onclick="location.reload()" class="btn-primary px-10 py-3 rounded-full text-[10px] uppercase tracking-widest opacity-60 hover:opacity-100">
+                Restart Journey
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        function nextStep(stepNumber) {
+            // 背景切換邏輯
+            document.querySelectorAll('.bg-layer').forEach(bg => {
+                bg.classList.remove('active');
+            });
+            const targetBg = document.getElementById('bg-' + stepNumber);
+            if (targetBg) targetBg.classList.add('active');
+
+            // 內容切換邏輯
+            document.querySelectorAll('.step-content').forEach(step => {
+                step.classList.remove('active', 'fade-in');
+            });
+            const nextStepEl = document.getElementById('step-' + stepNumber);
+            nextStepEl.classList.add('active', 'fade-in');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
