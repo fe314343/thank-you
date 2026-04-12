@@ -128,18 +128,20 @@
     <div class="texture"></div>
 
     <!-- 各階段背景圖片 -->
-    <!-- 第一幕：香氛蠟燭背景 -->
+    <!-- 第一幕：香氛蠟燭背景 (首頁) -->
     <div id="bg-1" class="bg-layer active" style="background-image: url('https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?q=80&w=1920');"></div>
-    <!-- 第二幕：冷冽異鄉背景 -->
-    <div id="bg-2" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=1920');"></div>
-    <!-- 第三幕：夕陽餘暉回鄉背景 -->
-    <div id="bg-3" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1920');"></div>
-    <!-- 第四幕：內省湖泊背景 -->
-    <div id="bg-4" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1920');"></div>
-    <!-- 第五幕：書寫空間背景 -->
-    <div id="bg-5" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1920');"></div>
-    <!-- 第六幕：和解祝福背景 -->
-    <div id="bg-6" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1920');"></div>
+    <!-- 第二幕：開場背景 (靜謐森林) -->
+    <div id="bg-2" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1920');"></div>
+    <!-- 第三幕：冷冽異鄉背景 -->
+    <div id="bg-3" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=1920');"></div>
+    <!-- 第四幕：夕陽餘暉回鄉背景 -->
+    <div id="bg-4" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1920');"></div>
+    <!-- 第五幕：內省湖泊背景 -->
+    <div id="bg-5" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1920');"></div>
+    <!-- 第六幕：書寫空間背景 -->
+    <div id="bg-6" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1920');"></div>
+    <!-- 第七幕：和解祝福背景 -->
+    <div id="bg-7" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1920');"></div>
 
     <div class="bg-overlay"></div>
 
@@ -171,8 +173,27 @@
             </button>
         </div>
 
-        <!-- Step 2: Story Part 1 -->
-        <div id="step-2" class="step-content">
+        <!-- Step 2: Opening Words (NEW) -->
+        <div id="step-2" class="step-content text-center">
+            <div class="mb-4 text-stone-400 text-[10px] tracking-[0.3em] uppercase">Opening / 序曲</div>
+            <h2 class="text-3xl serif mb-10 text-stone-800 leading-snug">
+                我們每個人，<br>
+                都有一個無法言說的「過去」。
+            </h2>
+            
+            <div class="glass-card p-10 md:p-14 rounded-[2rem] mb-12 leading-loose text-stone-700">
+                <p class="mb-6">在生活的洪流中，我們總是被推著向前跑，忙著成為別人期待的樣子，忙著追求遠方的風景。</p>
+                <p class="mb-6">然而，在某些安靜的深夜，那些被我們藏起來的決定、那些曾經讓你隱隱作痛的遺憾，其實從未消失。</p>
+                <p class="font-medium text-stone-900 italic">「這一段旅程，不只是聽我的故事，<br>也是找回你對自己那份溫柔的開端。」</p>
+            </div>
+            
+            <button onclick="nextStep(3)" class="btn-primary px-10 py-3 rounded-full text-sm">
+                聆聽我的故事
+            </button>
+        </div>
+
+        <!-- Step 3: Story Part 1 (Original Step 2) -->
+        <div id="step-3" class="step-content">
             <div class="mb-4 text-stone-400 text-[10px] tracking-[0.3em] uppercase">Chapter 01 / 啟程</div>
             <h2 class="text-2xl md:text-3xl serif mb-10 text-stone-800 leading-snug">
                 曾經的我，<br>
@@ -191,14 +212,14 @@
             </div>
             
             <div class="text-center">
-                <button onclick="nextStep(3)" class="btn-primary px-10 py-3 rounded-full text-sm">
+                <button onclick="nextStep(4)" class="btn-primary px-10 py-3 rounded-full text-sm">
                     那後來呢？
                 </button>
             </div>
         </div>
 
-        <!-- Step 3: Story Part 2 -->
-        <div id="step-3" class="step-content">
+        <!-- Step 4: Story Part 2 (Original Step 3) -->
+        <div id="step-4" class="step-content">
             <div class="mb-4 text-stone-400 text-[10px] tracking-[0.3em] uppercase">Chapter 02 / 歸途</div>
             <h2 class="text-2xl md:text-3xl serif mb-10 text-stone-800 leading-snug">
                 回到家後，<br>
@@ -214,14 +235,14 @@
             </div>
             
             <div class="text-center">
-                <button onclick="nextStep(4)" class="btn-primary px-10 py-3 rounded-full text-sm">
+                <button onclick="nextStep(5)" class="btn-primary px-10 py-3 rounded-full text-sm">
                     走入內心
                 </button>
             </div>
         </div>
 
-        <!-- Step 4: Reflection -->
-        <div id="step-4" class="step-content text-center">
+        <!-- Step 5: Reflection (Original Step 4) -->
+        <div id="step-5" class="step-content text-center">
             <h2 class="text-3xl serif mb-4 text-stone-800">換你說說話</h2>
             <p class="text-stone-500 mb-12">在記憶的長廊裡，是否也有一個被你冷落的自己？</p>
             
@@ -240,13 +261,13 @@
                 </div>
             </div>
             
-            <button onclick="nextStep(5)" class="btn-primary px-12 py-4 rounded-full shadow-lg">
+            <button onclick="nextStep(6)" class="btn-primary px-12 py-4 rounded-full shadow-lg">
                 寫下這份體諒
             </button>
         </div>
 
-        <!-- Step 5: QR Code -->
-        <div id="step-5" class="step-content text-center">
+        <!-- Step 6: QR Code (Original Step 5) -->
+        <div id="step-6" class="step-content text-center">
             <h2 class="text-2xl serif mb-6 text-stone-800">把想說的話，寫成信</h2>
             <p class="text-stone-500 mb-12 leading-relaxed">
                 掃描下方 QR Code，進入專屬書寫空間。<br>
@@ -261,14 +282,14 @@
             </div>
             
             <div class="mt-24">
-                <button onclick="nextStep(6)" class="text-stone-400 underline underline-offset-8 text-sm hover:text-stone-600 transition-colors">
+                <button onclick="nextStep(7)" class="text-stone-400 underline underline-offset-8 text-sm hover:text-stone-600 transition-colors">
                     完成後，領受最後的祝福
                 </button>
             </div>
         </div>
 
-        <!-- Step 6: Conclusion -->
-        <div id="step-6" class="step-content text-center py-10">
+        <!-- Step 7: Conclusion (Original Step 6) -->
+        <div id="step-7" class="step-content text-center py-10">
             <div class="mb-12 text-4xl">🌿</div>
             
             <h2 class="text-3xl serif mb-10 text-stone-800 tracking-widest leading-relaxed">
