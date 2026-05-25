@@ -128,12 +128,19 @@
     <div class="texture"></div>
 
     <!-- 各階段背景圖片 -->
+    <!-- 第一幕：香氛蠟燭背景 (首頁) -->
     <div id="bg-1" class="bg-layer active" style="background-image: url('https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?q=80&w=1920');"></div>
-    <div id="bg-2" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1920');"></div>
+    <!-- 第二幕：開場背景 (靜謐森林 - 改為帶點陰暗壓抑感的深色林間) -->
+    <div id="bg-2" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1920');"></div>
+    <!-- 第三幕：冷冽異鄉背景 -->
     <div id="bg-3" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=1920');"></div>
+    <!-- 第四幕：夕陽餘暉回鄉背景 -->
     <div id="bg-4" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1920');"></div>
+    <!-- 第五幕：內省湖泊背景 -->
     <div id="bg-5" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1920');"></div>
+    <!-- 第六幕：書寫空間背景 -->
     <div id="bg-6" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1920');"></div>
+    <!-- 第七幕：和解祝福背景 -->
     <div id="bg-7" class="bg-layer" style="background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1920');"></div>
 
     <div class="bg-overlay"></div>
@@ -166,22 +173,31 @@
             </button>
         </div>
 
-        <!-- Step 2: Opening Words -->
+        <!-- Step 2: Opening Words (情緒加強版) -->
         <div id="step-2" class="step-content text-center">
-            <div class="mb-4 text-stone-400 text-[10px] tracking-[0.3em] uppercase">Opening / 序曲</div>
-            <h2 class="text-3xl serif mb-10 text-stone-800 leading-snug">
-                我們每個人，<br>
-                都有一個無法言說的「過去」。
+            <div class="mb-4 text-stone-400 text-[10px] tracking-[0.3em] uppercase">Opening / 怨懟與自責</div>
+            <h2 class="text-3xl serif mb-10 text-stone-800 leading-snug md:leading-normal">
+                有時候，我們最恨的，<br>
+                是那個親手把生活搞砸的自己。
             </h2>
             
-            <div class="glass-card p-10 md:p-14 rounded-[2rem] mb-12 leading-loose text-stone-700">
-                <p class="mb-6">在生活的洪流中，我們總是被推著向前跑，忙著成為別人期待的樣子，忙著追求遠方的風景。</p>
-                <p class="mb-6">然而，在某些安靜的深夜，那些被我們藏起來的決定、那些曾經讓你隱隱作痛的遺憾，其實從未消失。</p>
-                <p class="font-medium text-stone-900 italic">「這一段旅程，不只是聽我的故事，<br>也是找回你對自己那份溫柔的開端。」</p>
+            <div class="glass-card p-8 md:p-12 rounded-[2rem] mb-12 text-left leading-relaxed text-stone-700">
+                <p class="mb-6 font-semibold text-stone-900 text-lg border-b border-stone-300 pb-4">
+                    「為什麼當初要那樣選？！」
+                </p>
+                <p class="mb-6 text-stone-600">
+                    你是不是也在無數個失眠的深夜裡，咬著牙、捏著拳頭，在心裡這樣聲嘶力竭地詰問過自己？
+                </p>
+                <p class="mb-6 text-stone-600">
+                    看著鏡子裡那張疲憊不堪的臉，心裡充斥著憤怒、不甘，甚至是深深的怨恨。我們怪自己不夠聰明，怪自己一意孤行，更恨自己為什麼要親手推開原本安穩的溫暖，去換來一身的傷痛與孤獨。
+                </p>
+                <p class="font-medium text-stone-800 bg-stone-100/50 p-4 rounded-xl italic">
+                    我們把所有的自責、不滿與怒火，全都無情地宣洩在那個無能為力的自己身上。甚至，好幾年都不願意原諒他。
+                </p>
             </div>
             
             <button onclick="nextStep(3)" class="btn-primary px-10 py-3 rounded-full text-sm">
-                聆聽我的故事
+                聆聽我的自白
             </button>
         </div>
 
@@ -224,7 +240,7 @@
                 <p class="mb-6">我終於看見了，那個孤身在外、獨自承受壓力的自己。他在異鄉冷冽的夜裡，其實也只是在為了「更好的明天」而努力著。他雖然害怕，但他還是勇敢地踏出去了。</p>
                 
                 <p class="font-bold text-stone-900 mb-4 text-xl serif">「對不起，我曾那樣責備你。」</p>
-                <p>我終於明白，他當初選擇離開，是因為他想要自我突破、想給未來的自己更多可能。他的出發點，全是因為對生命的熱忱。他不應該被我這樣唾棄，他應該被我好好抱一抱。</p>
+                <p>I 我終於明白，他當初選擇離開，是因為他想要自我突破、想給未來的自己更多可能。他的出發點，全是因為對生命的熱忱。他不應該被我這樣唾棄，他應該被我好好抱一抱。</p>
             </div>
             
             <div class="text-center">
